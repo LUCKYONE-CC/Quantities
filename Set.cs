@@ -202,6 +202,12 @@ public class Set<T>
         }
         return result;
     }
+    /// <summary>
+    /// Check if both sets have the same members
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
     public static bool operator ==(Set<T> a, Set<T> b)
     {
         if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
@@ -215,7 +221,12 @@ public class Set<T>
 
         return a.Elements.OrderBy(e => e).SequenceEqual(b.Elements.OrderBy(e => e));
     }
-
+    /// <summary>
+    /// Check that both groups do not have the same members
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
     public static bool operator !=(Set<T> a, Set<T> b)
     {
         return !(a == b);
